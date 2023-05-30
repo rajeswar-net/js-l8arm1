@@ -1,0 +1,23 @@
+// Import stylesheets
+import './style.css';
+
+// Write Javascript code!
+const appDiv = document.getElementById('app');
+appDiv.innerHTML = `<h1>JS Starter</h1>`;
+
+
+let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let clone = structuredClone(user);
+
+alert( user.sizes === clone.sizes ); // false, different objects
+
+// user and clone are totally unrelated now
+user.sizes.width = 60;    // change a property from one place
+alert(clone.sizes.width); // 50, not related
